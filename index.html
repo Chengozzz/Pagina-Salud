@@ -24,170 +24,77 @@
     </nav>
 
     <main>
-       <section id="inicio" class="page-section active">
-    <h2>¡Bienvenido a tu App de Bienestar!</h2>
-    
-    <div class="card consejo-card">
-        <h3>Consejo del Día</h3>
-        <p>Recuerda mantenerte hidratado. Beber suficiente agua es clave para tu metabolismo y niveles de energía. ¡Intenta tomar al menos 8 vasos hoy!</p>
-    </div>
+    	<section id="inicio" class="page-section active">
+    		<h2>¡Bienvenido a tu App de Bienestar!</h2>
+        <div class="card consejo-card">
+            </div>
+        <h3>Recetas Recomendadas</h3>
+        <div class="recipe-gallery">
+            </div>
+  	</section>
 
-    <h3>Recetas Recomendadas</h3>
-    <div class="recipe-gallery">
-        
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Ensalada+Fesca" alt="Ensalada">
-            <div class="card-content">
-                <h4>Ensalada Fresca de Quinoa</h4>
-                <p>Una opción ligera y llena de proteína para tu almuerzo.</p>
-            </div>
-        </div>
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Batido+de+Frutos" alt="Batido">
-            <div class="card-content">
-                <h4>Batido Energético</h4>
-                <p>Perfecto para empezar la mañana o después de entrenar.</p>
-            </div>
-        </div>
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Salmón+al+Horno" alt="Salmón">
-            <div class="card-content">
-                <h4>Salmón al Horno con Vegetales</h4>
-                <p>Una cena saludable, rica en Omega-3 y fácil de preparar.</p>
-            </div>
-        </div>
+    	<section id="perfil" class="page-section">
+    		<h2>Tu Perfil de Salud</h2>
+        <form id="formPerfil" class="form-container">
+            </form>
+    	</section>
 
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Pollo+y+Arroz" alt="Pollo y Arroz">
-            <div class="card-content">
-                <h4>Receta para Ganar Músculo</h4>
-                <p>Un clásico alto en proteínas: pollo, arroz integral y brócoli.</p>
-            </div>
-        </div>
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Pescado+y+Espárragos" alt="Pescado para diabéticos">
-            <div class="card-content">
-                <h4>Receta para Diabéticos</h4>
-                <p>Pescado blanco al vapor con espárragos. Bajo índice glucémico y saludable.</p>
-            </div>
-        </div>
-        <div class="card recipe-card">
-            <img src="https://via.placeholder.com/300x150.png?text=Sopa+de+Lentejas" alt="Sopa para perder peso">
-            <div class="card-content">
-                <h4>Receta para Perder Peso</h4>
-                <p>Sopa de lentejas y vegetales. Una comida saciante y baja en calorías.</p>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-        <section id="perfil" class="page-section">
-            <h2>Tu Perfil de Salud</h2>
-            <form id="formPerfil" class="form-container">
-                <div class="form-group">
-                    <label for="estatura">Estatura (en cm)</label>
-                    <input type="number" id="estatura" placeholder="Ej. 175">
-                </div>
-                <div class="form-group">
-                    <label for="pesoInicial">Peso Inicial (en kg)</label>
-                    <input type="number" id="pesoInicial" placeholder="Ej. 70.5" step="0.1">
-                </div>
-                <div class="form-group">
-                    <label for="notasMedicas">Notas Médicas Relevantes</label>
-                    <textarea id="notasMedicas" rows="5" placeholder="Ej. Alergia a las nueces, intolerancia a la lactosa..."></textarea>
-                </div>
-                <button type="submit" id="guardarPerfil" class="btn-primary">Guardar Perfil</button>
-            </form>
-        </section>
-
-                <section id="recordatorios" class="page-section">
+            	<section id="recordatorios" class="page-section">
             <h2>Configurar Recordatorios</h2>
             <form id="formRecordatorios" class="form-container">
+                <fieldset>
+                    <legend>Hidratación</legend>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-agua">
+                        Activar recordatorio de tomar agua
+                    </label>
+                </fieldset>
 
-                                <div class="recordatorios-gallery">
-
-                                        <div class="card recordatorio-card">
-                        <div class="card-content">
-                            <h4>Hidratación</h4>
-                            <p>Activar recordatorio de tomar agua</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="check-agua">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                                        <div class="card recordatorio-card">
-                        <div class="card-content">
-                            <h4>Desayuno</h4>
-                            <p>Activar recordatorio de comida</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="check-desayuno">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                                        <div class="card recordatorio-card">
-                        <div class="card-content">
-                            <h4>Comida</h4>
-                            <p>Activar recordatorio de comida</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="check-comida">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                                        <div class="card recordatorio-card">
-                        <div class="card-content">
-                            <h4>Cena</h4>
-                            <p>Activar recordatorio de cena</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" id="check-cena">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                </div>                 
+                <fieldset>
+                    <legend>Comidas</legend>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-desayuno">
+                        Recordatorio de desayuno
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-comida">
+                        Recordatorio de comida
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="check-cena">
+                        Recordatorio de cena
+                    </label>
+                </fieldset>
+                
                 <button type="submit" id="guardarRecordatorios" class="btn-primary">Guardar Configuración</button>
             </form>
         </section>
-                <section id="progreso" class="page-section">
-            <h2>Registra tu Progreso Semanal</h2>
-           <form id="formProgreso" class="form-container">
 
-    <div class="form-group">
-        <label for="progresoFecha">Fecha</label>
-        <input type="date" id="progresoFecha" required>
-    </div>
-        <div class="form-group">
-            <label for="progresoPeso">Peso Actual (en kg)</label>
-            <input type="number" id="progresoPeso" placeholder="Ej. 69.5" step="0.1" required>
-        </div>
-    <div class="form-group">
-        <label for="progresoNotas">Notas de la semana</label>
-        <textarea id="progresoNotas" rows="4" placeholder="Ej. Me sentí con más energía esta semana..."></textarea>
-    </div>
-    <button type="submit" id="registrarAvance" class="btn-primary">Registrar Avance</button>
-</form>
-            <h3 class="historial-titulo">Mi Historial de Avances</h3>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Peso (kg)</th>
-                            <th>Notas</th>
-                	 </tr>
-                    </thead>
-                    <tbody id="historialTablaBody">
-                        </tbody>
-                </table>
-            </div>
-        </section>
+            	<section id="progreso" class="page-section">
+        	<h2>Registra tu Progreso Semanal</h2>
+        	<form id="formProgreso" class="form-container">
+
+    			<div class="form-group">
+      				<label for="progresoFecha">Fecha</label>
+      				<input type="date" id="progresoFecha" required>
+    			</div>
+        		<div class="form-group">
+          			<label for="progresoPeso">Peso Actual (en kg)</label>
+          			<input type="number" id="progresoPeso" placeholder="Ej. 69.5" step="0.1" required>
+        		</div>
+    			<div class="form-group">
+      				<label for="progresoNotas">Notas de la semana</label>
+      				<textarea id="progresoNotas" rows="4" placeholder="Ej. Me sentí con más energía esta semana..."></textarea>
+   			</div>
+   			<button type="submit" id="registrarAvance" class="btn-primary">Registrar Avance</button>
+			</form>
+        
+    		<h3 class="historial-titulo">Mi Historial de Avances</h3>
+    	
+                		<div id="historialCardsContainer" class="progress-gallery">
+        		    		</div>
+
+    	</section>
     </main>
 
     <script src="script.js"></script>

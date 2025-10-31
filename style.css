@@ -262,82 +262,44 @@ tbody tr:last-child td {
         /* 3 columnas en pantallas grandes */
         grid-template-columns: repeat(3, 1fr);
     }
-    /* --- CSS Adicional para la sección de Recordatorios --- */
+    /* --- CSS Adicional para el Historial de Progreso --- */
 
-/* 1. Contenedor para las tarjetas de recordatorio */
-.recordatorios-gallery {
+.progress-gallery {
     display: flex;
     flex-direction: column; /* Apila las tarjetas verticalmente */
-    gap: 1rem; /* Espacio entre tarjetas (ajusta si es necesario) */
-    margin-bottom: 2rem; /* Espacio antes del botón 'Guardar' */
+    gap: 1rem;
 }
 
-/* 2. Estilo de la tarjeta de recordatorio */
-.recordatorio-card {
+.progress-card {
+    /* Asumo que ya tienes una clase .card con sombra, bordes, etc. */
+    padding: 1.25rem 1.5rem;
+}
+
+.progress-card-header {
     display: flex;
-    justify-content: space-between; /* Contenido a la izq, toggle a la der */
-    align-items: center; /* Centra verticalmente */
-    padding: 1.25rem 1.5rem; /* Relleno interno de la tarjeta */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #eee; /* Una línea sutil de separación */
+    padding-bottom: 0.75rem;
 }
 
-.recordatorio-card .card-content {
-    padding: 0;
+.progress-date {
+    font-weight: 700; /* Bolding */
+    font-size: 1.1rem;
+    color: #333;
 }
 
-.recordatorio-card .card-content h4 {
-    margin-bottom: 0.25rem; /* Menos espacio entre título y párrafo */
+.progress-weight {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4CAF50; /* Color verde para el peso */
 }
 
-.recordatorio-card .card-content p {
-    margin-bottom: 0; /* Quitamos margen inferior del párrafo */
-    font-size: 0.9rem;
-    color: #555; /* Un color más suave para la descripción */
-}
-
-
-/* 3. Estilos para el interruptor (toggle switch) */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
-}
-
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 28px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: #4CAF50; /* Color verde */
-}
-
-input:checked + .slider:before {
-    transform: translateX(22px);
+.progress-notes {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
 }
 }
