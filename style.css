@@ -1,0 +1,265 @@
+/* --- ESTILOS GLOBALES Y VARIABLES --- */
+:root {
+    --primary-color: #00796b; /* Un verde azulado saludable */
+    --primary-dark: #004d40;
+    --light-gray: #f4f7f6;
+    --dark-gray: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+nav {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--light-gray);
+}
+
+.nav-links a.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- CONTENIDO PRINCIPAL Y SECCIONES (SPA) --- */
+main {
+    padding-top: 65px; /* Altura de la barra de navegación */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.page-section {
+    padding: 2rem 1rem;
+    display: none; /* Oculta todas las secciones por defecto */
+    min-height: calc(100vh - 65px);
+    animation: fadeIn 0.5s ease;
+}
+
+.page-section.active {
+    display: block; /* Muestra solo la sección activa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- ESTILOS DE FORMULARIOS --- */
+.form-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Formulario de Recordatorios (Checkboxes) */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+fieldset legend {
+    font-weight: 700;
+    padding: 0 0.5rem;
+    color: var(--primary-dark);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 0.75rem;
+    width: 18px;
+    height: 18px;
+}
+
+/* --- ESTILOS DE TARJETAS (Cards) --- */
+.card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden; /* Para que la imagen respete los bordes */
+}
+
+.consejo-card {
+    padding: 1.5rem;
+    border-left: 5px solid var(--primary-color);
+}
+
+.recipe-gallery {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+/* --- TABLA DE PROGRESO --- */
+.historial-titulo {
+    margin-top: 3rem;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Para que la tabla sea responsive en móviles */
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #e0f2f1; /* Verde muy claro */
+    font-weight: 700;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- DISEÑO RESPONSIVE (Mobile-First) --- */
+
+/* Para pantallas medianas (tablets) y más grandes */
+@media (min-width: 768px) {
+    .page-section {
+        padding: 3rem 2rem;
+    }
+
+    .nav-links li {
+        margin-left: 1.5rem;
+    }
+
+    .recipe-gallery {
+        /* 3 columnas en pantallas grandes */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
