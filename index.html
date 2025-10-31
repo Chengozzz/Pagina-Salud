@@ -24,7 +24,7 @@
     </nav>
 
     <main>
-       <section id="inicio" class="page-section active">
+        <section id="inicio" class="page-section active">
     <h2>¡Bienvenido a tu App de Bienestar!</h2>
     
     <div class="card consejo-card">
@@ -106,26 +106,38 @@
             <form id="formRecordatorios" class="form-container">
                 <fieldset>
                     <legend>Hidratación</legend>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="check-agua">
-                        Activar recordatorio de tomar agua
-                    </label>
+                    <div class="switch-container">
+                        <span>Activar recordatorio de tomar agua</span>
+                        <label class="switch">
+                            <input type="checkbox" id="check-agua">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                 </fieldset>
 
                 <fieldset>
                     <legend>Comidas</legend>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="check-desayuno">
-                        Recordatorio de desayuno
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="check-comida">
-                        Recordatorio de comida
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="check-cena">
-                        Recordatorio de cena
-                    </label>
+                    <div class="switch-container">
+                        <span>Recordatorio de desayuno</span>
+                        <label class="switch">
+                            <input type="checkbox" id="check-desayuno">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="switch-container">
+                        <span>Recordatorio de comida</span>
+                        <label class="switch">
+                            <input type="checkbox" id="check-comida">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="switch-container">
+                        <span>Recordatorio de cena</span>
+                        <label class="switch">
+                            <input type="checkbox" id="check-cena">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
                 </fieldset>
                 
                 <button type="submit" id="guardarRecordatorios" class="btn-primary">Guardar Configuración</button>
@@ -146,24 +158,13 @@
         </div>
     <div class="form-group">
         <label for="progresoNotas">Notas de la semana</label>
-        <textarea id="progresoNotas" rows="4" placeholder="Ej. Me sentí con más energía esta semana..."></textarea>
-    </div>
-    <button type="submit" id="registrarAvance" class="btn-primary">Registrar Avance</button>
+       <textarea id="progresoNotas" rows="4" placeholder="Ej. Me sentí con más energía esta semana..."></textarea>
+   </div>
+   <button type="submit" id="registrarAvance" class="btn-primary">Registrar Avance</button>
 </form>
             <h3 class="historial-titulo">Mi Historial de Avances</h3>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Peso (kg)</th>
-                            <th>Notas</th>
-                        </tr>
-                    </thead>
-                    <tbody id="historialTablaBody">
-                        </tbody>
-                </table>
-            </div>
+<div id="historialGallery" class="recipe-gallery">
+</div>
         </section>
     </main>
 

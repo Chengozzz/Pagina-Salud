@@ -170,6 +170,8 @@ fieldset legend {
     color: var(--primary-dark);
 }
 
+/* --- ESTILOS ANTIGUOS DE CHECKBOX (Comentados) --- */
+/*
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -182,6 +184,78 @@ fieldset legend {
     width: 18px;
     height: 18px;
 }
+*/
+
+/* --- ESTILOS PARA EL SWITCH (TOGGLE) --- */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Texto a la izq, switch a la der */
+    margin-bottom: 1.25rem;
+    padding: 0 0.5rem; /* Un poco de padding para que no esté pegado */
+}
+
+/* El 'label' que actúa como el cuerpo del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;  /* Ancho del switch */
+    height: 34px; /* Alto del switch */
+    flex-shrink: 0; /* Evita que el switch se encoja */
+}
+
+/* Ocultamos el checkbox real */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* El 'slider' es el fondo (el riel) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Color de 'apagado' */
+    transition: .4s;
+}
+
+/* El círculo (el 'knob' o perilla) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Alto del círculo */
+    width: 26px;  /* Ancho del círculo */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+/* --- LÓGICA DE 'ENCENDIDO' --- */
+
+/* Cuando el input está 'checked', cambia el color del fondo */
+input:checked + .slider {
+    background-color: var(--primary-color); /* Usamos tu color primario */
+}
+
+/* Cuando está 'checked', mueve el círculo */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* --- ESTILO REDONDEADO --- */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 
 /* --- ESTILOS DE TARJETAS (Cards) --- */
 .card {
@@ -213,14 +287,15 @@ fieldset legend {
     padding: 1.5rem;
 }
 
-/* --- TABLA DE PROGRESO --- */
+/* --- TABLA DE PROGRESO (ESTILOS ANTIGUOS COMENTADOS) --- */
 .historial-titulo {
     margin-top: 3rem;
 }
 
+/*
 .table-container {
     width: 100%;
-    overflow-x: auto; /* Para que la tabla sea responsive en móviles */
+    overflow-x: auto; 
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: var(--shadow);
@@ -238,13 +313,39 @@ th, td {
 }
 
 th {
-    background-color: #e0f2f1; /* Verde muy claro */
+    background-color: #e0f2f1;
     font-weight: 700;
 }
 
 tbody tr:last-child td {
     border-bottom: none;
 }
+*/
+
+/* --- ESTILOS DE TARJETAS DE PROGRESO --- */
+.progreso-card .card-content p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.progreso-card .card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.progreso-card .card-content strong {
+    color: var(--primary-dark); 
+}
+
+/* Estilo para el mensaje 'Aún no hay registros' */
+.mensaje-vacio {
+    color: #777;
+    font-style: italic;
+    padding: 1rem;
+    text-align: center;
+    /* Hacemos que ocupe todo el ancho de la galería si es grid */
+    grid-column: 1 / -1;
+}
+
 
 /* --- DISEÑO RESPONSIVE (Mobile-First) --- */
 
@@ -262,44 +363,5 @@ tbody tr:last-child td {
         /* 3 columnas en pantallas grandes */
         grid-template-columns: repeat(3, 1fr);
     }
-    /* --- CSS Adicional para el Historial de Progreso --- */
-
-.progress-gallery {
-    display: flex;
-    flex-direction: column; /* Apila las tarjetas verticalmente */
-    gap: 1rem;
-}
-
-.progress-card {
-    /* Asumo que ya tienes una clase .card con sombra, bordes, etc. */
-    padding: 1.25rem 1.5rem;
-}
-
-.progress-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    border-bottom: 1px solid #eee; /* Una línea sutil de separación */
-    padding-bottom: 0.75rem;
-}
-
-.progress-date {
-    font-weight: 700; /* Bolding */
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.progress-weight {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #4CAF50; /* Color verde para el peso */
-}
-
-.progress-notes {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-}
+    
 }
